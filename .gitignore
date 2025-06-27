@@ -1,6 +1,4 @@
-<<<<<<< HEAD
 node_modules
-=======
 # dev
 .yarn/
 !.yarn/releases
@@ -29,4 +27,3 @@ lerna-debug.log*
 
 # misc
 .DS_Store
->>>>>>> backend#1
