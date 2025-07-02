@@ -38,8 +38,8 @@ app.get('/auth/google', async (c) => {
     httpOnly: true,
   })
   const url = new URL('https://accounts.google.com/o/oauth2/v2/auth') // สร้าง URL สำหรับ OAuth 2.0
-  url.searchParams.set('client_id', process.env.GOOGLE_CLIENT_ID || '') // คือ ตั้งค่า client_id จาก environment variable
-  url.searchParams.set('redirect_uri', process.env.GOOGLE_CALLBACK_URL || '') // ตั้งค่า redirect_uri ที่ Google จะส่งกลับมาหลังจากการยืนยันตัวตน
+  url.searchParams.set('client_id', process.env.GOOGLE_CLIENT_ID) // คือ ตั้งค่า client_id จาก environment variable
+  url.searchParams.set('redirect_uri', process.env.GOOGLE_CALLBACK_URL) // ตั้งค่า redirect_uri ที่ Google จะส่งกลับมาหลังจากการยืนยันตัวตน
   url.searchParams.set('response_type', 'code') // คือ ตั้งค่า response_type เป็น 'code' เพื่อรับ authorization code
   url.searchParams.set('scope', 'https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile') // ตั้งค่า scope ที่ต้องการเข้าถึง (ต้องการสิทธิ์อะไรบ้างจาก Google) https://developers.google.com/identity/protocols/oauth2/scopes?hl=th
   url.searchParams.set('state', state) // คือ ตั้งค่า state เพื่อป้องกัน CSRF
@@ -70,9 +70,9 @@ app.get('/auth/google/callback', async (c) => {
     method: 'POST',
     body: {
       code, // authorization code ที่ได้รับจาก Google
-      client_id: process.env.GOOGLE_CLIENT_ID || '', // client_id ที่ตั้งค่าไว้ใน environment variable
-      client_secret: process.env.GOOGLE_CLIENT_SECRET || '', // client_secret ที่ตั้งค่าไว้ใน environment variable
-      redirect_uri: process.env.GOOGLE_CALLBACK_URL || '', // redirect_uri ที่ตั้งค่าไว้ใน environment variable
+      client_id: process.env.GOOGLE_CLIENT_ID, // client_id ที่ตั้งค่าไว้ใน environment variable
+      client_secret: process.env.GOOGLE_CLIENT_SECRET, // client_secret ที่ตั้งค่าไว้ใน environment variable
+      redirect_uri: process.env.GOOGLE_CALLBACK_URL, // redirect_uri ที่ตั้งค่าไว้ใน environment variable
       grant_type: 'authorization_code', // คือ ตั้งค่า grant_type เป็น 'authorization_code'
     }
   })
