@@ -135,7 +135,7 @@ app.get('/articles/:id', async (c) => {
 })
 
 app.onError((err, c) => {
-  console.error(err)
+  //console.error(err)
   if (err instanceof HTTPException) {
     return c.json({ error: err.message }, err.status)
   }
