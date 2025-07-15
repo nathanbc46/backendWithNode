@@ -1,5 +1,6 @@
 {
 	"dependencies": {
+		"@hono/node-ws": "^1.2.0",
 		"@hono/zod-validator": "^0.7.0",
 		"@node-rs/argon2": "^2.0.2",
 		"ejs": "^3.1.10",
@@ -9,6 +10,7 @@
 	},
 	"devDependencies": {
 		"@types/bcrypt": "^5.0.2",
-		"@types/ejs": "^3.1.5"
+		"@types/ejs": "^3.1.5",
+		"prisma": "^6.11.0"
 	}
 }

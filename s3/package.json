@@ -1,0 +1,23 @@
+{
+  "name": "s3",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.15.0",
+    "aws-sdk": "^2.1692.0",
+    "dotenv": "^17.0.1",
+    "hono": "^4.8.3",
+    "s3-upload-stream": "^1.0.7",
+    "sharp": "^0.34.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.17",
+    "@types/s3-upload-stream": "^1.0.7",
+    "tsx": "^4.7.1",
+    "typescript": "^5.8.3"
+  }
+}
